@@ -5,7 +5,7 @@
     class Home extends FrontController {
 
         public function indexAction() : void {
-            echo 'IND';
+            echo 'HOŁM INDEX';
         }
 
         public function testAction() : void {
