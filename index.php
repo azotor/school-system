@@ -10,10 +10,12 @@
     use Tk\Engine\ControllerLoader;
     use Tk\Engine\GlobalVar;
     use Tk\Engine\Parser;
+    use Tk\Engine\View;
 
     $_global = [];
 
     GlobalVar::set( '_parser', new Parser() );
+    GlobalVar::set( '_view', new View() );
 
     new ControllerLoader();
     

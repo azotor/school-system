@@ -10,6 +10,7 @@
         public function __construct() {
 
             $parser = GlobalVar::get( '_parser' );
+            $view = GlobalVar::get( '_view' );
 
             $actionName = $parser -> getAction() . App::ACTION_SUFIX;
 
