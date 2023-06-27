@@ -15,6 +15,8 @@
         public function __construct() {
 
             $uri = explode( '?', trim( substr( $_SERVER[ 'REQUEST_URI' ], strlen( Path::SUB_DIR ) ) ) );
+            
+            $uri = array_filter($uri, 'strlen');
 
             if( count( $uri ) > 0 )
                 foreach( explode( '/', $uri[ 0 ] ) as $param )
@@ -34,7 +36,9 @@
 
         public function setParam( string $_value ) : void { $this -> params[] = $_value; }
 
-        public function getParam( int $_id ) : string { return $this -> params[ $_id ]; }
+        public function getParam( int $_id ) : string { return $this -> existsParam( $_id ) ? $this -> params[ $_id ] : ''; }
+
+        public function existsParam( int $_id ) : bool { return array_key_exists( $_id, $this -> params ); }
 
         public function countParams() : int { return count( $this -> params ); }
 
@@ -54,9 +58,9 @@
 
         public function getAction() : string { return $this -> action; }
 
-        public function setDefaultController() { $this -> controller = App::DEFAULT_CONTROLLER; }
+        public function setDefaultController() : void { $this -> controller = App::DEFAULT_CONTROLLER; }
 
-        public function setDefaultAction() { $this -> action = App::DEFAULT_ACTION; }
+        public function setDefaultAction() : void { $this -> action = App::DEFAULT_ACTION; }
 
     }
 

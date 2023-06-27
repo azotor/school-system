@@ -7,5 +7,7 @@
 </head>
 <body>
     <h1>INDEKS 6665</h1>
-</body>
-</html>
+    <Klocek>Teścik</Klocek>
+    <Klocek>Teścik2</Klocek>
+    <Klocek>Teścik3</Klocek>
+    <Klocek>Teścik4</Klocek>

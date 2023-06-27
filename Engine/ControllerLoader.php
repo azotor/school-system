@@ -11,14 +11,14 @@
             
             $parser = GlobalVar::get( '_parser' );
 
-            $className = App::CLASS_PREFIX . $parser -> getController();
+            $className = App::CONTROLLER_CLASS_PREFIX . $parser -> getController();
 
             if( !class_exists( $className ) ) {
                 
                 $parser -> setDefaultController();
                 $parser -> setDefaultAction();
 
-                $className = App::CLASS_PREFIX . $parser -> getController();
+                $className = App::CONTROLLER_CLASS_PREFIX . $parser -> getController();
 
             }
 

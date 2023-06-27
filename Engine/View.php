@@ -14,7 +14,7 @@
 
         public function __construct() {
 
-            ViewTree::init();
+            ViewTree::initGlobalTree();
 
             GlobalVar::set( '_styles', [] );
             GlobalVar::set( '_scripts', [] );
@@ -23,11 +23,13 @@
 
         public function __destruct() {
 
+            echo 'DESTRUCTOR';
+            
             if( !$this -> render ) return;
 
-            ViewTree::appendFromFile( $this -> getPath( 'test' ) );
+            //ViewTree::appendFromFile( $this -> getPath( 'test' ) );
 
-            //require_once $this -> getPath( 'index' );
+            echo ViewTree::render();
             
         }
 

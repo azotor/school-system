@@ -13,6 +13,7 @@
         const SERVER = SERVER_NAME . self::SUB_DIR;
         const ROOT = DOCUMENT_ROOT . self::SUB_DIR;
         const VIEW = self::ROOT . 'View/';
+        const COMPONENT = self::ROOT . 'Component/';
 
     }
 

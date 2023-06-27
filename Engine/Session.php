@@ -10,7 +10,7 @@
 
         public static function set( string $_name, string $_value ) : void { $_SESSION[ $_name ] = $_value; }
 
-        public static function get( string $_name ) { return ( key_exists( $_name, $_SESSION ) ) ? $_SESSION[ $_name ] : false; }
+        public static function get( string $_name ) : mixed { return ( key_exists( $_name, $_SESSION ) ) ? $_SESSION[ $_name ] : false; }
 
         public static function remove( string $_name ) : void { unset( $_SESSION[ $_name ] ); }
 
